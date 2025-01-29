@@ -23,7 +23,7 @@ chat_collection = db["chat_history"]
 files_collection = db["file_metadata"]
 
 
-SERPAPI_KEY = "9b0144d36a7f83585bef5353c9e8be179aea12f5627a32705b54c8857e995ea7"
+
 
 
 
@@ -188,7 +188,7 @@ async def websearch(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # Perform web search
         params = {
             "q": query,
-            "api_key": SERPAPI_KEY,
+            "api_key": os.getenv("SERPAPI_KEY"),
             "engine": "google",
             "num": 3  # Get top 3 results
         }
